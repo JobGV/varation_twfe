@@ -1,0 +1,16 @@
+# Replication requirements for
+# "How much variation does two-way fixed effects use?"
+#
+#   python -m venv .venv && source .venv/bin/activate
+#   pip install -r requirements.txt
+#   python download_data.py
+#   python replication.py && python unbalanced.py && python hh_check.py && python empirical.py
+#
+# Verified with Python 3.12.3 and the versions pinned below.  The lower bounds
+# are the minima the code relies on; remove the upper bounds if a newer major
+# release is needed.
+
+numpy>=1.24,<3          # 2.4.4 used
+pandas>=2.0,<4          # 3.0.2 used; pivot_table on the panel extracts
+scipy>=1.10,<2          # 1.17.1 used; SLSQP cross-check of Proposition 2 only
+rdata>=1.0,<2           # 1.1.0 used; reads the .rda replication extracts
